@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class HeadFollow : MonoBehaviour
 {
-    public bool track = true;
     public Transform target;
+    public Transform buddy;
+    public float speed = 2;
+
 
     // Update is called once per frame
     void Update()
     {
-        if(track){
-            transform.LookAt(target);        
+        Transform lookTo;
+        if(gameObject.GetComponentInParent<GuestTracker>().watch){
+            lookTo = target;
+        } else {
+            lookTo = buddy;
         }
+        Quaternion rot = Quaternion.LookRotation(lookTo.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, speed * Time.deltaTime);
     }
 }
