@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
     public int socialized = 0;
     //number of partygoers turned
     public int numTurned = 0;
+    
+    public List<string> visible = new List<string>();
 
     public float eyeIntensity = 5;
 

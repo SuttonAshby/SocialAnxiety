@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   socialized: 0
   numTurned: 0
+  visible: []
   eyeIntensity: 50
 --- !u!4 &60241317
 Transform:
@@ -176,7 +177,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: da0b55c2bc12c42f3b87375f6d09651a,
         type: 3}
       propertyPath: m_Name
-      value: SAchar
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: da0b55c2bc12c42f3b87375f6d09651a,
         type: 3}
@@ -186,17 +187,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: da0b55c2bc12c42f3b87375f6d09651a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9
+      value: -3.9118445
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: da0b55c2bc12c42f3b87375f6d09651a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.047
+      value: 0.04699999
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: da0b55c2bc12c42f3b87375f6d09651a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.757
+      value: -3.7381217
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: da0b55c2bc12c42f3b87375f6d09651a,
         type: 3}
@@ -279,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   watch: 0
   isBlue: 0
+  name: Beth
 --- !u!1 &441424141
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +556,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842334280}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bbeb0544542844bba25377e35d8598a, type: 3}
   m_Name: 
@@ -659,7 +661,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 20300e66e55874a6498e336573817959,
         type: 3}
       propertyPath: m_Name
-      value: SA2
+      value: Beth
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20300e66e55874a6498e336573817959,
         type: 3}
@@ -803,6 +805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   watch: 0
   isBlue: 0
+  name: Adam
 --- !u!1 &1940353707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7199902334543741925, guid: 20300e66e55874a6498e336573817959,
@@ -840,7 +843,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b9e9e7a8b9e1247e7a2a6cae6e1b6942,
         type: 3}
       propertyPath: m_Name
-      value: Test4SA
+      value: Adam
       objectReference: {fileID: 0}
     - target: {fileID: 5931859008346183677, guid: b9e9e7a8b9e1247e7a2a6cae6e1b6942,
         type: 3}

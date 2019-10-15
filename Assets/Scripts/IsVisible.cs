@@ -5,17 +5,24 @@ using UnityEngine;
 public class IsVisible : MonoBehaviour {
     
     public Renderer rend;
+    private Component tracker;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
+        tracker = GetComponentInParent<GuestTracker>();
     }
 
     void Update(){
+        List<string> visible = GameManager.Instance.visible;
         if(rend.isVisible){
-            Debug.Log(gameObject.name + " is visible");
+            if(!visible.Contains(tracker.name)){
+                visible.Add(tracker.name);
+            }
+            // Debug.Log(gameObject.name + " is visible");
         } else {
-            Debug.Log(gameObject.name + " is NOT visible");
+            visible.Remove(tracker.name);
+            // Debug.Log(gameObject.name + " is NOT visible");
         }
     }
 

@@ -6,6 +6,7 @@ public class GuestTracker : MonoBehaviour
 {
     public bool watch = false;
     public bool isBlue = false;
+    public string name;
     private GameObject eyes;
     // Start is called before the first frame update
     void Start()
