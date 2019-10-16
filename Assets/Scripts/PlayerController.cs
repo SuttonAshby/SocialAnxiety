@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     CharacterController characterController;
+    Animator animator;
     public float speed = 5;
     public float gravity = -5;
     float velocityY = 0; 
 
     void Start(){
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     void Update () {
+
+        if(Input.GetKey("e")){
+            animator.SetTrigger("isWaving");
+        }
+
         velocityY += gravity * Time.deltaTime;
 
         Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));

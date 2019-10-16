@@ -11,7 +11,11 @@ public class GameManager : MonoBehaviour {
     //number of partygoers turned
     public int numTurned = 0;
     
-    public List<string> visible = new List<string>();
+    public int minTurnRate;
+    public int maxTurnRate;
+    public bool turningActive = true;
+    
+    public List<string> notVisible = new List<string>();
 
     public float eyeIntensity = 5;
 
@@ -22,5 +26,29 @@ public class GameManager : MonoBehaviour {
 		} else {
 			Destroy(gameObject);
 		}
+
+        //Start Guest Turner Corountine
+        StartCoroutine("Countdown");
+
 	}
+
+    void turnPartyGuest(){
+        //set head to follow
+        //set eyes to blue
+        //update total
+        //contort and freeze
+        //reduce sound
+    }
+
+
+    IEnumerator Countdown(){
+
+        while(turningActive){
+            int waitTime = Random.Range(minTurnRate, maxTurnRate);
+            yield return new WaitForSeconds(waitTime);
+            Debug.Log("Party Goer Turning. Time waited: " + waitTime);
+            turnPartyGuest();
+        }
+    }
+
 }

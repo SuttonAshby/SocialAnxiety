@@ -13,15 +13,20 @@ public class IsVisible : MonoBehaviour {
         tracker = GetComponentInParent<GuestTracker>();
     }
 
+    //NEED TO REVERSE VISIBILTY LIST
     void Update(){
-        List<string> visible = GameManager.Instance.visible;
+        List<string> notVisible = GameManager.Instance.notVisible;
         if(rend.isVisible){
-            if(!visible.Contains(tracker.name)){
-                visible.Add(tracker.name);
-            }
+            notVisible.Remove(tracker.name);
+            // if(!notVisible.Contains(tracker.name)){
+            //     notVisible.Add(tracker.name);
+            // }
             // Debug.Log(gameObject.name + " is visible");
         } else {
-            visible.Remove(tracker.name);
+            if(!notVisible.Contains(tracker.name)){
+                notVisible.Add(tracker.name);
+            }
+            // notVisible.Remove(tracker.name);
             // Debug.Log(gameObject.name + " is NOT visible");
         }
     }
