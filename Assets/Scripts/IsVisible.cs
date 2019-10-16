@@ -5,7 +5,7 @@ using UnityEngine;
 public class IsVisible : MonoBehaviour {
     
     public Renderer rend;
-    private Component tracker;
+    private GuestTracker tracker;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class IsVisible : MonoBehaviour {
             // }
             // Debug.Log(gameObject.name + " is visible");
         } else {
-            if(!notVisible.Contains(tracker.name)){
+            if(!notVisible.Contains(tracker.name) && !tracker.turned){
                 notVisible.Add(tracker.name);
             }
             // notVisible.Remove(tracker.name);

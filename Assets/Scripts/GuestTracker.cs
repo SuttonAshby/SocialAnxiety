@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GuestTracker : MonoBehaviour
 {
+    public bool turned = false;
     public bool watch = false;
     public bool isBlue = false;
     public string name;
@@ -21,7 +22,7 @@ public class GuestTracker : MonoBehaviour
     }
 
     void OnTriggerExit(Collider collider){
-        if(collider.gameObject.tag == "Player"){
+        if(collider.gameObject.tag == "Player" && !turned){
             watch = false;
         }
     }
@@ -41,5 +42,28 @@ public class GuestTracker : MonoBehaviour
     void Update()
     {
         // blueEyes();
+        // if(Input.GetKey("r")){
+        //     StartCoroutine("Turner");
+
+
+        // }
     }
+    public void GetTurned(){
+        StartCoroutine("Turner");
+    }
+
+    IEnumerator Turner(){
+        turned = true;
+        watch = true;
+        isBlue = true;
+        blueEyes();
+        GameManager.Instance.numTurned++;
+        Debug.Log(name + " got turned");
+        float randInt = Random.Range(.1f, 2.834f) * 1f;
+        gameObject.GetComponent<Animator>().Play("Agony", 0, 0f);
+        yield return new WaitForSeconds(randInt);
+        Debug.Log("stopping after: " + randInt);
+        gameObject.GetComponent<Animator>().enabled = false;
+    }
+
 }

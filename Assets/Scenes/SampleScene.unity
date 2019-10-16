@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122a1a0de2c5b413aa690e0f28f70359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turned: 0
   watch: 0
   isBlue: 0
   name: Beth
@@ -564,7 +565,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842334280}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bbeb0544542844bba25377e35d8598a, type: 3}
   m_Name: 
@@ -666,7 +667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.005569771, y: 0.000599603, z: -0.0000033101824, w: 0.9999843}
-  m_LocalPosition: {x: 0.009058264, y: 0.18854736, z: -0.21}
+  m_LocalPosition: {x: 0.009058264, y: 0.18854736, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 975597425}
@@ -830,6 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122a1a0de2c5b413aa690e0f28f70359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turned: 0
   watch: 0
   isBlue: 0
   name: Adam

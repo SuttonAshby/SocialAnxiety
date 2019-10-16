@@ -33,6 +33,12 @@ public class GameManager : MonoBehaviour {
 	}
 
     void turnPartyGuest(){
+        if(notVisible.Count > 0) {
+            int randInt = Random.Range(0, notVisible.Count);
+            GameObject vic = GameObject.Find(notVisible[randInt]);
+            vic.GetComponent<GuestTracker>().GetTurned();
+        }
+
         //set head to follow
         //set eyes to blue
         //update total
