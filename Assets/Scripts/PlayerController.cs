@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour {
     Animator animator;
     public float speed = 5;
     public float gravity = -5;
-    float velocityY = 0; 
+    public bool isWaving = false;
+    float velocityY = 0;
 
     void Start(){
         characterController = GetComponent<CharacterController>();
@@ -16,8 +17,9 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
 
-        if(Input.GetKey("e")){
+        if(Input.GetKeyUp("e") && !isWaving){
             animator.SetTrigger("isWaving");
+            isWaving = true;
         }
 
         velocityY += gravity * Time.deltaTime;

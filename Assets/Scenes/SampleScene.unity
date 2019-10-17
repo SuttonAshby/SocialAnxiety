@@ -215,7 +215,7 @@ MonoBehaviour:
   numTurned: 0
   minTurnRate: 5
   maxTurnRate: 10
-  turningActive: 1
+  turningActive: 0
   notVisible: []
   eyeIntensity: 50
 --- !u!4 &60241317
@@ -1044,7 +1044,21 @@ MonoBehaviour:
   watch: 0
   isBlue: 0
   isDancing: 0
+  interactable: 0
   name: Beth
+--- !u!65 &378152101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378152097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6592336, y: 1.5823367, z: 1.051666}
+  m_Center: {x: -0.1845285, y: 0.7679776, z: 0.3471402}
 --- !u!1001 &384206486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1753,6 +1767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   gravity: -5
+  isWaving: 0
 --- !u!143 &842334282
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2387,6 +2402,7 @@ MonoBehaviour:
   watch: 0
   isBlue: 0
   isDancing: 0
+  interactable: 0
   name: Adam
 --- !u!4 &1083776660 stripped
 Transform:
@@ -2714,6 +2730,7 @@ MonoBehaviour:
   watch: 0
   isBlue: 0
   isDancing: 0
+  interactable: 0
   name: Cheryl
 --- !u!95 &1363665998
 Animator:
@@ -2762,6 +2779,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+--- !u!65 &1363666001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363665994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1544523, y: 1.615994, z: 1.0885217}
+  m_Center: {x: 0.07722615, y: 0.8084924, z: 0.4030064}
 --- !u!1 &1370454815
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,7 +3194,21 @@ MonoBehaviour:
   watch: 0
   isBlue: 0
   isDancing: 1
+  interactable: 0
   name: Dan
+--- !u!65 &1546054213
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546054210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8467922, y: 1.6631598, z: 1.2175812}
+  m_Center: {x: 0.03589643, y: 0.79838777, z: 0.370706}
 --- !u!1001 &1603425165
 PrefabInstance:
   m_ObjectHideFlags: 0

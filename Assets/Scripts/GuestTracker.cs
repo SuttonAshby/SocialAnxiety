@@ -8,6 +8,7 @@ public class GuestTracker : MonoBehaviour
     public bool watch = false;
     public bool isBlue = false;
     public bool isDancing = false;
+    public bool interactable = false;
     public string name;
     private GameObject eyes;
     Animator animator;
@@ -24,12 +25,30 @@ public class GuestTracker : MonoBehaviour
     void OnTriggerEnter(Collider collider){
         if(collider.gameObject.tag == "Player"){
             watch = true;
+            interactable = true;
+            if(isDancing){
+                animator.SetTrigger("isInteractable");
+            }
         }
     }
+
+    void OnTriggerStay(Collider collider){
+        if(collider.gameObject.tag == "Player"){
+            if(collider.gameObject.GetComponent<PlayerController>().isWaving && !turned && interactable){
+                GameManager.Instance.socialized++;
+                collider.gameObject.GetComponent<PlayerController>().isWaving = false;
+                animator.SetTrigger("isWaving");
+                interactable = false;
+            }
+        }
+    }
+
 
     void OnTriggerExit(Collider collider){
         if(collider.gameObject.tag == "Player" && !turned){
             watch = false;
+            interactable = false;
+            collider.gameObject.GetComponent<PlayerController>().isWaving = false;
         }
     }
 
@@ -73,9 +92,13 @@ public class GuestTracker : MonoBehaviour
     }
 
     IEnumerator Dancing(){
-        while (isDancing && !turned){
-            yield return new WaitForSeconds(5);
-            animator.SetInteger("isDancing", Random.Range(0, 5));
+        if(interactable){
+            animator.SetInteger("isDancing", 0);
+        } else {
+            while (isDancing && !turned){
+                yield return new WaitForSeconds(5);
+                animator.SetInteger("isDancing", Random.Range(0, 5));
+            }
         }
     }
 
