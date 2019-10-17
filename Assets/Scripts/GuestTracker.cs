@@ -7,12 +7,18 @@ public class GuestTracker : MonoBehaviour
     public bool turned = false;
     public bool watch = false;
     public bool isBlue = false;
+    public bool isDancing = false;
     public string name;
     private GameObject eyes;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         eyes = transform.Find("high-polyMesh").gameObject;
+        animator = GetComponent<Animator>();
+        if(isDancing){
+            StartCoroutine("Dancing");
+        }
     }
 
     void OnTriggerEnter(Collider collider){
@@ -64,6 +70,13 @@ public class GuestTracker : MonoBehaviour
         yield return new WaitForSeconds(randInt);
         Debug.Log("stopping after: " + randInt);
         gameObject.GetComponent<Animator>().enabled = false;
+    }
+
+    IEnumerator Dancing(){
+        while (isDancing && !turned){
+            yield return new WaitForSeconds(5);
+            animator.SetInteger("isDancing", Random.Range(0, 5));
+        }
     }
 
 }
